@@ -56,8 +56,8 @@ def sorteio_entre_familias(pessoas):
 
 # Função para enviar email
 def enviar_email(destinatario, assunto, corpo):
-    remetente = "tanossegundo@gmail.com"
-    senha = "xbwe zqol quiv vvdq"
+    remetente = ""
+    senha = ""
 
     msg = MIMEMultipart()
     msg['From'] = remetente
