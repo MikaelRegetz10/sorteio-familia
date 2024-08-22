@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+  <section id="home">
+    <div class="card text-center text-bg-light mt-5">
+      <div class="card-header">
+        <h1>Sorteio</h1>
+      </div>
+      <div class="card-body">
+        <form id="sorteio-form" action="{{ url_for('sorteio') }}" method="post">
+
+          <div id="familias">
+            <div class="familia mb-4" data-familia-id="1">
+              <h5>Família 1</h5>
+              <div class="mb-3">
+                <input type="email" name="familia_1_email" class="form-control" placeholder="Email Família" aria-label="Email Família" required>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" name="familia_1_membro" placeholder="Nome Integrante" aria-label="Nome Integrante" required>
+                <button class="btn btn-outline-secondary" type="button" onclick="addMembro(this)">Adicionar membro</button>
+              </div>
+              <div class="membros-adicionados"></div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-success mb-3" onclick="addFamilia()">Adicionar Família</button>
+
+        </form>
+      </div>
+
+      <div class="card-footer text-muted">
+        <button type="submit" class="btn btn-primary" onclick="submitForm()">Enviar</button>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="loading-screen">
+      <div class="spinner-border text-primary" role="status">
+          <span class="sr-only"></span>
+      </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/addFamilia.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/removeFamilia.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/submitForm.js') }}"></script>
+{% endblock %}
