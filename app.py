@@ -39,7 +39,7 @@ def resultado(status: bool):
     msg = "Sorteio realizado com sucesso."
 
     if not status:
-        msg = "Não foi possível realizar o sorteio, porfavor tente novamente."
+        msg = "Não foi possível realizar o sorteio. Por favor tente novamente."
 
     return render_template("resultado.html", message=msg)
 

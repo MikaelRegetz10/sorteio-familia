@@ -68,7 +68,6 @@ def sorteio_main(familia: dict) -> Dict[str, bool]:
                 corpo_email += f"• {pessoa} tirou {sorteado}\n"
 
             enviar_email(dados["email"], "Resultado do Sorteio", corpo_email)
-            print("email")
 
         return {"status": True}
 
