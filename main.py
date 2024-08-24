@@ -62,12 +62,12 @@ def sorteio_main(familia: dict) -> Dict[str, bool]:
         resultado_sorteio = sorteio_entre_familias(pessoas)
 
         for sobrenome, dados in familia.items():
-            corpo_email = "Resultado do sorteio:\n\n"
+            corpo_email = "Olá, obrigado por escolher nosso site para o sorteio!\n\nSeguem os resultados do nosso sorteio:\n\n"
             for pessoa in dados["familia"]:
                 sorteado = resultado_sorteio[str(pessoa)]
-                corpo_email += f"{pessoa} tirou {sorteado}\n"
+                corpo_email += f"• {pessoa} tirou {sorteado}\n"
 
-            enviar_email(dados["email"], "Resultado do Sorteio de Natal", corpo_email)
+            enviar_email(dados["email"], "Resultado do Sorteio", corpo_email)
             print("email")
 
         return {"status": True}
@@ -75,7 +75,3 @@ def sorteio_main(familia: dict) -> Dict[str, bool]:
     except Exception as e:
         print(f"Erro: {e}")
         return {"status": False}
-
-if __name__ == '__main__':
-    familia = {'mikaelregetz': {'email': 'mikaelregetz@gmail.com', 'familia': ['mikael', 'isa']}, 'tanossegundo': {'email': 'tanossegundo@gmail.com', 'familia': ['a', 'b']}}
-    sorteio_main(familia)

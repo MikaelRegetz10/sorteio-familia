@@ -36,10 +36,10 @@ def sorteio():
 @app.route("/resultado/<status>")
 def resultado(status: bool):
     status = status if status == "True" else False
-    msg = "Sorteio realizado com sucesso"
+    msg = "Sorteio realizado com sucesso."
 
     if not status:
-        msg = "Sorteio deu ruim!"
+        msg = "Não foi possível realizar o sorteio, porfavor tente novamente."
 
     return render_template("resultado.html", message=msg)
 
